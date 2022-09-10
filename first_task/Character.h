@@ -23,6 +23,7 @@ public:
 	void SetBlock(bool b) { block = b; }
 
 	virtual void AttackMelee(Character& c) = 0;
+	virtual void AttackRange(Character& c) = 0;
 
 	void print() const { std::cout << this->GetLife(); }
 
@@ -40,7 +41,7 @@ public:
 	virtual ~Demon() {}
 
 	void AttackMelee(Character& c) override;
-	void AttackRange(Character& c);
+	void AttackRange(Character& c) override;
 	void Block(bool b) { Character::SetBlock(b); }
 
 private:
@@ -53,8 +54,8 @@ public:
 	Knight();
 	virtual ~Knight() {}
 
-	void AttackMelee(Character& c);
-	void AttackRange(Character& c);
+	void AttackMelee(Character& c) override;
+	void AttackRange(Character& c) override;
 	void Block(bool b) { Character::SetBlock(b); }
 
 private:
