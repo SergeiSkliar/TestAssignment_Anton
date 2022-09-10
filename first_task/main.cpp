@@ -14,8 +14,8 @@ int main()
 	while ((Player.GetLife() != 0) || (Enemy.GetLife() != 0))
 	{
 		char input;
-		std::cout << "Your life: " << Player.GetLife() << "\t\t\tEnemy life: " << Enemy.GetLife() << std::endl;
 		Player.SetBlock(false);
+		std::cout << "Your life: " << Player.GetLife() << "\t\t\tEnemy life: " << Enemy.GetLife() << std::endl;
 		std::cout << "Your action (m - melee attack, r - range attack, b - block): ";
 		input = std::cin.get();
 		switch (input)
@@ -24,7 +24,7 @@ int main()
 			Player.AttackMelee(Enemy);
 			break;
 		case 'r':
-
+			Player.AttackRange(Enemy);
 			break;
 		case 'b':
 			Player.SetBlock(true);
@@ -37,10 +37,10 @@ int main()
 		switch (input)
 		{
 		case 'm':
-
+			Enemy.AttackMelee(Player);
 			break;
 		case 'r':
-
+			Enemy.AttackMelee(Player);
 			break;
 		case 'b':
 			Enemy.SetBlock(true);
@@ -48,3 +48,4 @@ int main()
 		}
 	}
 }
+
