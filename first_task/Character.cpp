@@ -21,7 +21,15 @@ void Demon::AttackMelee(Character& c)
 	if (Character::GetBlock() == true)
 		return;
 	else
-		Character::SetLife(c.GetLife() - this->GetMelee());
+		Character::SetLife(c.GetLife() - c.GetMelee());
+}
+
+void Demon::AttackRange(Character& c)
+{
+	if (Character::GetBlock() == true)
+		return;
+	else
+		Character::SetLife(c.GetLife() - c.GetMelee());
 }
 
 void Knight::AttackMelee(Character& c)
@@ -29,5 +37,13 @@ void Knight::AttackMelee(Character& c)
 	if (Character::GetBlock() == true)
 		return;
 	else
-		Character::SetLife(c.GetLife() - this->GetMelee());
+		Character::SetLife(c.GetLife() - c.GetMelee());
+}
+
+void Knight::AttackRange(Character& c)
+{
+	if (Character::GetBlock() == true)
+		return;
+	else
+		Character::SetLife(c.GetLife() - c.GetMelee());
 }
